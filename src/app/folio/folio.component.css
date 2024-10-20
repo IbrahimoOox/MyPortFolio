@@ -1,0 +1,475 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: black;
+    color: white;
+}
+
+header {
+    margin-top: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 9%;
+    background-color: transparent;
+    filter: drop-shadow(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 3rem;
+    color: #b74b4b;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+    text-decoration: none;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+    text-decoration: none;
+    color: #b74b4b;
+}
+
+nav a {
+    font-size: 1.8rem;
+    color: white;
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+    text-decoration: none;
+}
+
+nav a:hover,
+nav a.active {
+    color: #b74b4b;
+    border-bottom: 3px solid #b74b4b;
+   
+}
+
+@media(max-width:995px) {
+    nav {
+        position: absolute;
+        display: none;
+        top: 0;
+        right: 0;
+        width: 40%;
+        border-left: 3px solid #b74b4b;
+        border-bottom: 3px solid #b74b4b;
+        border-bottom-left-radius: 2rem;
+        padding: 1rem solid;
+        background-color: #161616;
+        border-top: 0.1rem solid rgba(0,0,0,0.1);
+    }
+
+    nav.active {
+        display: block;
+    }
+
+    nav a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+
+    nav a:hover,
+    nav a.active {
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border-bottom: 0.5rem solid #b74b4b;
+    }
+}
+
+section {
+    min-height: 100vh;
+    padding: 5rem 9% 5rem;
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    background-color: black;
+}
+
+.home .home-content h1 {
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+span {
+    color: #b74b4b;
+}
+
+.home-content h3 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.home-content p {
+    font-size: 1.6rem;
+}
+
+.home-img {
+    border-radius: 50%;
+}
+
+.home-img img {
+    position: relative;
+    width: 32vw;
+    border-radius: 80%;
+    box-shadow: 0 0 25px solid #b74b4b;
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+
+.home-img img:hover {
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background-color: transparent;
+    border: 0.2rem solid #b74b4b;
+    font-size: 2rem;
+    border-radius: 50%;
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.3s ease;
+    color: #b74b4b;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: black;
+    transform: scale(1.3) translateY(-5px);
+    background-color: #b74b4b;
+    box-shadow: 0 0 25px #b74b4b;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background-color: black;
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: #b74b4b;
+    letter-spacing: 0.3rem;
+    font-weight: 600;
+    border: 2px solid #b74b4b;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: scale3d(1.03);
+    background-color: #b74b4b;
+    color: black;
+    box-shadow: 0 0 25px #b74b4b;
+}
+
+.typing-text {
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+}
+
+.typing-text span {
+    position: relative;
+}
+
+.typing-text span::before {
+    content: "Full-Stack Developer";
+    color: #b74b4b;
+    animation: words 20s infinite;
+}
+
+.typing-text span::after {
+    content: "";
+    background-color: black;
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid black;
+    right: -8;
+    animation: cursor 0.6s infinite;
+}
+
+@keyframes cursor {
+    to {
+        border-left: 3px solid #b74b4b;
+    }
+}
+
+@keyframes words {
+    0%, 20% {
+        content: "Full-Stack Developer";
+    }
+    21%, 40% {
+        content: "Software engineer";
+    }
+    41%, 60% {
+        content: "Web Designer";
+    }
+    61%, 80% {
+        content: "Fashion influencer";
+    }
+    81%, 100% {
+        content: "Instagram Content Creator";
+    }
+}
+
+@media (max-width: 1000px) {
+    .home {
+        gap: 4rem;
+    }
+}
+
+@media(max-width:995px) {
+    .home {
+        flex-direction: column;
+        margin: 5rem 4rem;
+    }
+
+    .home .home-content h3 {
+        font-size: 2.5rem;
+    }
+
+    .home-content h1 {
+        font-size: 5rem;
+    }
+
+    .home-img img {
+        width: 70vw;
+        margin-top: 4rem;
+    }
+}
+
+.album {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.album img {
+    width: 15vw;
+    border-radius: 10%;
+    box-shadow: 0 0 25px solid #b74b4b;
+    transition: 0.3s ease;
+}
+
+.album img:hover {
+    transform: scale(1.1);
+}
+
+.service-cards {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem;
+}
+
+.card {
+    background: #1f7fac;
+    border-radius: 40px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px; /* Set a fixed width for the cards */
+    margin: 1rem;
+    transition: transform 0.2s, box-shadow 0.2s; /* Smooth hover effect */
+}
+
+.card-img-top {
+    width: 100%; /* Full width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.card-body {
+    padding: 1.5rem;
+    background-color: #161616;
+    color: rgb(255, 255, 255);
+}
+
+.card-title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    
+}
+
+.card-text {
+    font-size: 1.4rem;
+    
+}
+
+.text-muted {
+    color: #b74b4b;
+}
+
+.service-card:hover {
+    transform: translateY(-10px); /* Move the card up */
+    box-shadow: 0 6px 55px rgba(255, 255, 255, 0.2); /* Add shadow */
+}
+
+.services-description {
+    margin-top: 3rem; /* Space between the cards and paragraph */
+    text-align: center;
+    color: #ffffff;
+}
+
+.container {
+    display: flex;
+    justify-content: center; /* Center the content */
+    align-items: center; /* Center vertically */
+    text-align: center; /* Center text */
+    padding: 2rem; /* Add padding */
+}
+
+.services-text {
+    font-size: 2rem; /* Base font size */
+    line-height: 1.5; /* Adjust line height for readability */
+    margin: 0; /* Remove default margins */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .services-text {
+        font-size: 1.8rem; /* Slightly smaller font size on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .services-text {
+        font-size: 1.5rem; /* Even smaller font size for mobile devices */
+    }
+}
+.skills-title {
+    color:  #387bb3; /* Make the text transparent */
+    font-size: 4rem; 
+    font-style: normal; 
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.3) 25%, rgba(45, 184, 227, 0.908) 50%, rgba(228, 46, 201, 0.3) 75%);
+    background-size: 200% 100%; /* Twice the size for the animation */
+    -webkit-background-clip: text; /* Clip the background to the text */
+    background-clip: text; /* Clip the background to the text */
+    animation: shine 1.5s ease-in-out infinite; /* Apply shine animation */
+}
+
+@keyframes shine {
+    0% {
+        background-position: 200% 0; /* Start position */
+    }
+    100% {
+        background-position: 0% 0; /* End position */
+    }
+}
+
+.skills-title:hover {
+    text-shadow: 2px 2px 5px rgba(153, 211, 244, 0.584); /* Add shadow on hover for depth */
+    transform: scale(1.05); /* Slightly scale up on hover */
+    transition: transform 0.3s ease, text-shadow 0.3s ease; /* Smooth transition */
+}
+
+.skill-card {
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition for hover effects */
+    background-color: #4290b9df; /* Default background color */
+   
+    transition: transform 0.2s, box-shadow 0.2s; /* Smooth hover effect */
+    border-radius: 4rem;
+
+}
+
+.skill-card:hover {
+    transform: scale(1.05); /* Zoom in effect on hover */
+    background-color: rgba(0, 0, 0, 0.348); /* Light background color on hover */
+    box-shadow: 0 6px 55px rgba(20, 33, 153, 0.612); /* Add shadow */
+}
+
+.skill-card h5, .skill-card p {
+    transition: color 0.3s ease; /* Smooth transition for text color changes */
+}
+
+.skill-card:hover h5, .skill-card:hover p {
+    color: rgba(204, 242, 250, 0.816); /* Change text color to black on hover */
+}
+
+.row {
+    margin-left: 5rem;
+}
+
+.skills-conclusion {
+    color: rgb(255, 255, 255); /* White text for contrast */
+    max-width: 800px; /* Limit width for readability */
+    margin: 0 auto; /* Center the div */
+}
+
+.conclusion-text {
+    font-size: 2.2rem; /* Base font size */
+    line-height: 1.5; /* Improve readability */
+    padding: 1.5rem; /* Add padding for spacing */
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for contrast */
+    border-radius: 8px; /* Rounded corners */
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Ensure stars cover the full viewport */
+.stars {
+    position: fixed; /* Fix the stars in place even when scrolling */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Full width of the viewport */
+    height: 100vh; /* Full height of the viewport */
+    z-index: -1; /* Behind other content */
+    background-color: black; /* Space background */
+    overflow: hidden; /* Ensure stars don't overflow */
+  }
+  
+  /* Each star styling */
+  .star {
+    position: absolute;
+    background-color: white; /* White stars */
+    border-radius: 50%; /* Make them circular */
+    opacity: 0.8; /* Default opacity */
+    box-shadow: 0 0 5px white; /* Glowing effect */
+    animation: twinkle 2s infinite ease-in-out; /* Twinkling animation */
+  }
+  
+  /* Shining and twinkling effect */
+  @keyframes twinkle {
+    0%, 100% {
+      opacity: 0.6; /* Less visible */
+      box-shadow: 0 0 5px white; /* Soft glow */
+    }
+    50% {
+      opacity: 1; /* Fully visible */
+      box-shadow: 0 0 20px white; /* Stronger glow to simulate shining */
+    }
+  }
+  

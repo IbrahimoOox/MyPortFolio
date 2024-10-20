@@ -1,0 +1,46 @@
+/* Full-page background */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  /* Container for the stars */
+  .stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1; /* Behind the content */
+  }
+  
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none; /* Allow clicks to pass through the stars */
+  overflow: hidden; /* Prevent overflow */
+  z-index: -1; /* Send stars behind other elements */
+}
+
+.star {
+  position: absolute;
+  background-color: white; /* Change to your desired star color */
+  border-radius: 50%; /* Make stars circular */
+  animation: twinkle 1.5s infinite alternate;
+}
+
+/* Twinkling effect */
+@keyframes twinkle {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
