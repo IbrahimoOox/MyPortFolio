@@ -5,12 +5,14 @@ import { FolioComponent } from './folio/folio.component';
 import { ContactComponent } from './contact/contact.component';
 import { FormsModule } from '@angular/forms';
 
+
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
     RouterOutlet,         
             CommonModule,
+          
     FolioComponent,       
     ContactComponent,
     FormsModule ,

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms'; // Import FormsModule and NgForm
 import emailjs, { EmailJSResponseStatus } from '@emailjs/browser'; // Import EmailJS
+import { environment } from '../../environments/environment.prod';
 
 
 @Component({
@@ -19,9 +20,9 @@ export class ContactComponent {
   errorMessage: string = ''; // Fixed typo and updated variable name
 
   // EmailJS Configuration
-  serviceID: string = 'service_ibrahimox22pdw'; // Replace with your EmailJS service ID
-  templateID: string = 'template_bt0okth'; // Replace with your EmailJS template ID
-  userID: string = 'i_I7cFBJMquifDGLh'; // Replace with your EmailJS user ID
+  serviceID: string = environment.emailjsserviceid; // Replace with your EmailJS service ID
+  templateID: string = environment.emailjstemplateid ; // Replace with your EmailJS template ID
+  userID: string = environment.emailjsuserid; // Replace with your EmailJS user ID
 
   onSubmit(form: NgForm): void {
     console.log('Form submitted:', form.valid); // Log the form's validity

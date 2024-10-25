@@ -9,6 +9,7 @@ import {
   PLATFORM_ID 
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import bootstrap from '../../main.server';
 
 @Component({
   selector: 'app-folio',
@@ -17,7 +18,9 @@ import { isPlatformBrowser } from '@angular/common';
   styleUrls: ['./folio.component.css'],
   encapsulation: ViewEncapsulation.None  
 })
+
 export class FolioComponent implements AfterViewInit {
+  
 [x: string]: any;
   @ViewChild('textElement') textElement!: ElementRef;
 
@@ -75,4 +78,6 @@ export class FolioComponent implements AfterViewInit {
       this.renderer.appendChild(container, star);
     }
   }
+ 
+
 }
