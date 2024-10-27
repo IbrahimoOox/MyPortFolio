@@ -22,86 +22,156 @@ body {
     background-color: black;
     color: white;
 }
-
 header {
     margin-top: 20px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
     padding: 1rem 9%;
     background-color: transparent;
-    filter: drop-shadow(10px);
+    filter: drop-shadow(0 4px 5px rgba(0, 0, 0, 0.2));
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 100;
+    z-index: 1000;
 }
 
 .logo {
     font-size: 3rem;
     color: #b74b4b;
     font-weight: 800;
-    cursor: pointer;
-    transition: 0.5s ease;
-    text-decoration: none;
+    transition: transform 0.5s ease;
 }
 
 .logo:hover {
     transform: scale(1.1);
-    text-decoration: none;
     color: #b74b4b;
 }
 
 nav a {
     font-size: 1.8rem;
-    color: white;
-    margin-left: 4rem;
+    color: #b74b4b;
+    margin-left: 2rem;
     font-weight: 500;
-    transition: 0.3s ease;
-    border-bottom: 3px solid transparent;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
     text-decoration: none;
 }
 
 nav a:hover,
 nav a.active {
-    color: #b74b4b;
+    color: white;
     border-bottom: 3px solid #b74b4b;
-   
 }
 
-@media(max-width:995px) {
-    nav {
-        position: absolute;
-        display: none;
-        top: 0;
-        right: 0;
-        width: 40%;
-        border-left: 3px solid #b74b4b;
-        border-bottom: 3px solid #b74b4b;
-        border-bottom-left-radius: 2rem;
-        padding: 1rem solid;
+@media (max-width: 995px) {
+    .navbar-collapse {
         background-color: #161616;
-        border-top: 0.1rem solid rgba(0,0,0,0.1);
+        border: 5px solid #b74b4b;
+        border-radius: 2rem;
+        padding: 1.5rem;
+        position: absolute;
+        top: 60px;
+        header {
+            margin-top: 20px;
+            padding: 1rem 9%;
+            background-color: transparent;
+            filter: drop-shadow(0 4px 5px rgba(0, 0, 0, 0.2));
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+        
+        .logo {
+            font-size: 3rem;
+            color: #b74b4b;
+            font-weight: 800;
+            transition: transform 0.5s ease;
+        }
+        
+        .logo:hover {
+            transform: scale(1.1);
+            color: #b74b4b;
+        }
+        
+        nav a {
+            font-size: 1.8rem;
+            color: #b74b4b;
+            margin-left: 2rem;
+            font-weight: 500;
+            transition: color 0.3s ease, border-bottom 0.3s ease;
+            text-decoration: none;
+        }
+        
+        nav a:hover,
+        nav a.active {
+            color: white;
+            border-bottom: 3px solid #b74b4b;
+        }
+        
+        @media (max-width: 995px) {
+            .navbar-collapse {
+                background-color: #161616;
+                border: 5px solid #b74b4b;
+                border-radius: 2rem;
+                padding: 1.5rem;
+                position: absolute;
+                top: 60px;
+                right: 9%;
+                width: 300px;
+                z-index: 1000;
+            }
+        
+            .navbar-toggler {
+                border: none;
+                background: transparent;
+            }
+        
+            .navbar-toggler i {
+                color: #b74b4b;
+                font-size: 25px;
+            }
+        
+            .nav-link {
+                display: block;
+                font-size: 2.2rem;
+                margin: 1.5rem 0;
+                text-align: center;
+            }
+        
+            .nav-link:hover,
+            .nav-link.active {
+                padding: 1rem;
+                border-radius: 0.5rem;
+                border-bottom: 0.5rem solid #b74b4b;
+            }
+        }
+        
     }
 
-    nav.active {
+    .navbar-toggler {
+        border: none;
+        background: transparent;
+    }
+
+    .navbar-toggler i {
+        color: #b74b4b;
+        font-size: 25px;
+    }
+
+    .nav-link {
         display: block;
+        font-size: 2.2rem;
+        margin: 1.5rem 0;
+        text-align: center;
     }
 
-    nav a {
-        display: block;
-        font-size: 2rem;
-        margin: 3rem 0;
-    }
-
-    nav a:hover,
-    nav a.active {
+    .nav-link:hover,
+    .nav-link.active {
         padding: 1rem;
         border-radius: 0.5rem;
         border-bottom: 0.5rem solid #b74b4b;
     }
 }
+
+
 
 section {
     min-height: 100vh;
@@ -303,7 +373,7 @@ span {
     border-radius: 40px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    width: 300px; /* Set a fixed width for the cards */
+    /* width: 300px; Set a fixed width for the cards */
     margin: 1rem;
     transition: transform 0.2s, box-shadow 0.2s; /* Smooth hover effect */
 }
@@ -473,3 +543,6 @@ span {
     }
   }
   
+  .description {
+    margin-top: 4rem;
+  }

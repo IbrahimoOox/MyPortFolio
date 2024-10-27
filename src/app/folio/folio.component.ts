@@ -21,6 +21,8 @@ import bootstrap from '../../main.server';
 
 export class FolioComponent implements AfterViewInit {
   
+  isMenuOpen = false;
+  
 [x: string]: any;
   @ViewChild('textElement') textElement!: ElementRef;
 
@@ -77,6 +79,7 @@ export class FolioComponent implements AfterViewInit {
 
       this.renderer.appendChild(container, star);
     }
+    
   }
  
 

@@ -1,23 +1,26 @@
-import { Component, AfterViewInit, Renderer2, Inject, PLATFORM_ID } from '@angular/core';
-import { isPlatformBrowser,CommonModule } from '@angular/common';
+import {
+  Component,
+  AfterViewInit,
+  Renderer2,
+  Inject,
+  PLATFORM_ID,
+} from '@angular/core';
+import { isPlatformBrowser, CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { FolioComponent } from './folio/folio.component';
 import { ContactComponent } from './contact/contact.component';
 import { FormsModule } from '@angular/forms';
 
-
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
-    RouterOutlet,         
-            CommonModule,
-          
-    FolioComponent,       
+    RouterOutlet,
+    CommonModule,
+
+    FolioComponent,
     ContactComponent,
-    FormsModule ,
-    
-      
+    FormsModule,
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
@@ -34,7 +37,7 @@ export class AppComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     if (isPlatformBrowser(this.platformId)) {
-      this.createStars(150);  // Only create stars in the browser
+      this.createStars(150); // Only create stars in the browser
     }
   }
 
@@ -47,11 +50,11 @@ export class AppComponent implements AfterViewInit {
       const star = this.renderer.createElement('div');
       this.renderer.addClass(star, 'star');
 
-      const size = Math.random() * 3 + 1 + 'px';  // Randomize size
+      const size = Math.random() * 3 + 1 + 'px'; // Randomize size
       this.renderer.setStyle(star, 'width', size);
       this.renderer.setStyle(star, 'height', size);
 
-      const top = Math.random() * 100 + 'vh';  // Randomize vertical position
+      const top = Math.random() * 100 + 'vh'; // Randomize vertical position
       const left = Math.random() * 100 + 'vw'; // Randomize horizontal position
       this.renderer.setStyle(star, 'top', top);
       this.renderer.setStyle(star, 'left', left);
